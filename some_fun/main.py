@@ -29,6 +29,7 @@ def main(mbox, res1, res2):
 		print('{0}: {1}'.format(value, dict_[value]))
 
 	result1_file.close()
+	result2_file.close()
 	mbox_file.close()
 
 main("mbox.txt", "result_1.txt", "result_2.txt")
