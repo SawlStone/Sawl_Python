@@ -10,7 +10,7 @@ def valid_time(t):
             return False
         elif m > 59 or s > 59:
             return False
-        return [s % 2 == 0, int(h / 5), int(h % 5), int(m / 5), int(m % 5)]
+        return [s % 2 == 0, h // 5, h % 5, m // 5, m % 5]
     except:
         return False
 
@@ -24,9 +24,9 @@ def berlin_clock(time):
             print('Y')
         else:
             print('O')
-        print(vt[1] * 'R' + (4-vt[1])*'O')
-        print(vt[2] * 'R' + (4-vt[2])*'O')
-        l_line = list(vt[3] * 'Y' + (11-vt[3])*'O')
+        print(vt[1]*'R' + (4-vt[1])*'O')
+        print(vt[2]*'R' + (4-vt[2])*'O')
+        l_line = list(vt[3]*'Y' + (11-vt[3])*'O')
         if l_line[2] == 'Y':
             l_line[2] = 'R'
         if l_line[5] == 'Y':
@@ -34,7 +34,7 @@ def berlin_clock(time):
         if l_line[8] == 'Y':
             l_line[8] = 'R'
         print("".join(l_line))
-        print(vt[4] * 'Y' + (4-vt[4])*'O')
+        print(vt[4]*'Y' + (4-vt[4])*'O')
     else:
         print("Wrong time format! Use this one hh:mm:ss")
     print("-----")
@@ -47,7 +47,7 @@ def simple_berlin_clock(time):
     vt = valid_time(time)
     if vt:
         for i in vt:
-            print(int(i) * '|#|')
+            print(i * '|#|')
     else:
         print("Wrong time format! Use this one hh:mm:ss")
     print("-----")
