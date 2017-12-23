@@ -1,9 +1,7 @@
 def valid_time(t):
     # check if the time format is correct
     try:
-        h = int(t.split(":")[0])
-        m = int(t.split(":")[1])
-        s = int(t.split(":")[2])
+        h, m, s = map(int, t.split(':'))
         if h < 0 or m < 0 or s < 0:
             return "Data value can't be negative"
         if h > 23:
